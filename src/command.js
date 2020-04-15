@@ -1,3 +1,3 @@
-const array = require('./array')
+const variadic = require('./variadic')
 
-module.exports = array(null)
+module.exports = (opts = []) => (key, args, fields = {}) => variadic(key, args, {opts, ...fields})
