@@ -3,8 +3,8 @@ module.exports = types => (key, args, fields = {}) => {
 
   return {
     key,
-    types,
-    args,
+    ...(typeof types !== 'undefined' ? {types} : {}),
+    ...(typeof args  !== 'undefined' ? {args}  : {}),
     ...rest
   }
 }

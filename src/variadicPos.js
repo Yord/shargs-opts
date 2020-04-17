@@ -1,3 +1,3 @@
 const arrayPos = require('./arrayPos')
 
-module.exports = arrayPos(null)
+module.exports = arrayPos(undefined)

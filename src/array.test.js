@@ -2,9 +2,9 @@ const {anything, array: arbArray, assert, base64, constant, oneof, property, uni
 const array = require('./array')
 
 test('options types are correctly assembled', () => {
-  const typesKeyArgsOptionsResult = types().chain(types =>
+  const typesKeyArgsOptionsResult = oneof(constant(undefined), types()).chain(types =>
     base64().chain(key =>
-      anything().filter(a => typeof a !== 'undefined').chain(args =>
+      oneof(constant(undefined), anything()).chain(args =>
         oneof(constant(undefined), unicodeString()).chain(desc =>
           oneof(constant(undefined), anything()).chain(rules =>
             oneof(constant(undefined), anything()).chain(only =>
@@ -20,8 +20,8 @@ test('options types are correctly assembled', () => {
                           options,
                           result: {
                             key,
-                            types,
-                            args,
+                            ...(typeof types   !== 'undefined' ? {types}         : {}),
+                            ...(typeof args    !== 'undefined' ? {args}          : {}),
                             ...(typeof options !== 'undefined' ? {desc}          : {}),
                             ...(typeof options !== 'undefined' ? {only}          : {}),
                             ...(typeof options !== 'undefined' ? {opts}          : {}),
@@ -79,5 +79,5 @@ test('options allows any user defined field except __proto__, key, args, and typ
 function types () {
   const oneElem = ['string', 'number', 'bool']
   const arr = arbArray(oneof(...oneElem.map(constant)), 2, 10)
-  return oneof(...[...oneElem.map(a => [a]), [], null].map(constant), arr)
+  return oneof(...[...oneElem.map(a => [a]), []].map(constant), arr)
 }
