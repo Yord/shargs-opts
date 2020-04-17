@@ -2,7 +2,7 @@ const {anything, array: arbArray, assert, base64, constant, oneof, property, uni
 const arrayPos = require('./arrayPos')
 
 test('arrayPos is correctly assembled', () => {
-  const typesKeyArgsOptionsResult = types().chain(types =>
+  const typesKeyArgsOptionsResult = oneof(constant(undefined), types()).chain(types =>
     base64().chain(key =>
       oneof(constant(undefined), unicodeString()).chain(desc =>
         oneof(constant(undefined), anything()).chain(rules =>
@@ -18,8 +18,7 @@ test('arrayPos is correctly assembled', () => {
                         options,
                         result: {
                           key,
-                          args: null,
-                          types,
+                          ...(typeof types   !== 'undefined' ? {types}         : {}),
                           ...(typeof options !== 'undefined' ? {desc}          : {}),
                           ...(typeof options !== 'undefined' ? {only}          : {}),
                           ...(typeof options !== 'undefined' ? {opts}          : {}),
@@ -54,5 +53,5 @@ test('arrayPos is correctly assembled', () => {
 function types () {
   const oneElem = ['string', 'number', 'bool']
   const arr = arbArray(oneof(...oneElem.map(constant)), 2, 10)
-  return oneof(...[...oneElem.map(a => [a]), [], null].map(constant), arr)
+  return oneof(...[...oneElem.map(a => [a]), []].map(constant), arr)
 }
