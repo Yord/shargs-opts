@@ -1,3 +1,3 @@
 const array = require('./array')
 
-module.exports = array(null)
+module.exports = array(undefined)
