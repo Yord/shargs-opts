@@ -1,4 +1,4 @@
-module.exports = types => (key, args, fields = {}) => {
+const array = types => (key, args, fields = {}) => {
   const {__proto__, key: _1, types: _2, args: _3, ...rest} = fields
 
   return {
@@ -7,4 +7,8 @@ module.exports = types => (key, args, fields = {}) => {
     ...(typeof args  !== 'undefined' ? {args}  : {}),
     ...rest
   }
+}
+
+module.exports = {
+  array
 }

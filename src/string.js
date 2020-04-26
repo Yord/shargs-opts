@@ -1,3 +1,7 @@
-const array = require('./array')
+const {array} = require('./array')
 
-module.exports = array(['string'])
+const string = array(['string'])
+
+module.exports = {
+  string
+}

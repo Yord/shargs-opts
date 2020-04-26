@@ -1,5 +1,4 @@
-const complement = require('./complement')
-const {bool, flag, string} = require('..')
+const {bool, complement, flag, string} = require('..')
 
 test('complement README example works', () => {
   const birthday = string('birthday', ['-b'])

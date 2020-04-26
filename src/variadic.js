@@ -1,3 +1,7 @@
-const array = require('./array')
+const {array} = require('./array')
 
-module.exports = array(undefined)
+const variadic = array(undefined)
+
+module.exports = {
+  variadic
+}

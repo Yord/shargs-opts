@@ -1,3 +1,7 @@
-const arrayPos = require('./arrayPos')
+const {arrayPos} = require('./arrayPos')
 
-module.exports = arrayPos(['string'])
+const stringPos = arrayPos(['string'])
+
+module.exports = {
+  stringPos
+}

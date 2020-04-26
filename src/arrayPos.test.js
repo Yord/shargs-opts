@@ -1,5 +1,5 @@
 const {anything, array: arbArray, assert, base64, constant, oneof, property, unicodeString} = require('fast-check')
-const arrayPos = require('./arrayPos')
+const {arrayPos} = require('./arrayPos')
 
 test('arrayPos is correctly assembled', () => {
   const typesKeyArgsOptionsResult = oneof(constant(undefined), types()).chain(types =>

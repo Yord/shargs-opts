@@ -1,3 +1,7 @@
-const arrayPos = require('./arrayPos')
+const {arrayPos} = require('./arrayPos')
 
-module.exports = arrayPos(['bool'])
+const boolPos = arrayPos(['bool'])
+
+module.exports = {
+  boolPos
+}

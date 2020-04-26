@@ -1,3 +1,7 @@
-const array = require('./array')
+const {array} = require('./array')
 
-module.exports = types => (key, fields) => array(types)(key, undefined, fields)
+const arrayPos = types => (key, fields) => array(types)(key, undefined, fields)
+
+module.exports = {
+  arrayPos
+}
