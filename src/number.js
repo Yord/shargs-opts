@@ -1,3 +1,7 @@
-const array = require('./array')
+const {array} = require('./array')
 
-module.exports = array(['number'])
+const number = array(['number'])
+
+module.exports = {
+  number
+}

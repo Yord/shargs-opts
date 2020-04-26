@@ -1,3 +1,7 @@
-const arrayPos = require('./arrayPos')
+const {arrayPos} = require('./arrayPos')
 
-module.exports = arrayPos(undefined)
+const variadicPos = arrayPos(undefined)
+
+module.exports = {
+  variadicPos
+}

@@ -1,7 +1,11 @@
-module.exports = (prefix = '--no-') => (opt = {}) => {
+const complement = (prefix = '--no-') => (opt = {}) => {
   const {args = [], defaultValues, reverse = false, ...rest} = opt
   const args2 = args.map(prefixWith(prefix))
   return {...rest, reverse: !reverse, args: args2}
+}
+
+module.exports = {
+  complement
 }
 
 function prefixWith (prefix) {

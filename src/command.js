@@ -1,3 +1,7 @@
-const variadic = require('./variadic')
+const {variadic} = require('./variadic')
 
-module.exports = (opts = []) => (key, args, fields = {}) => variadic(key, args, {opts, ...fields})
+const command = (opts = []) => (key, args, fields = {}) => variadic(key, args, {opts, ...fields})
+
+module.exports = {
+  command
+}

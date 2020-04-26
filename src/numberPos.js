@@ -1,3 +1,7 @@
-const arrayPos = require('./arrayPos')
+const {arrayPos} = require('./arrayPos')
 
-module.exports = arrayPos(['number'])
+const numberPos = arrayPos(['number'])
+
+module.exports = {
+  numberPos
+}

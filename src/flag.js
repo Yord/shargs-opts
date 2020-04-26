@@ -1,3 +1,7 @@
-const array = require('./array')
+const {array} = require('./array')
 
-module.exports = array([])
+const flag = array([])
+
+module.exports = {
+  flag
+}
