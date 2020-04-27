@@ -7,6 +7,7 @@ const {complement}  = require('./decorators/complement')
 const {flag}        = require('./flag')
 const {number}      = require('./number')
 const {numberPos}   = require('./numberPos')
+const {program}     = require('./program')
 const {string}      = require('./string')
 const {stringPos}   = require('./stringPos')
 const {variadic}    = require('./variadic')
@@ -22,6 +23,7 @@ module.exports = {
   flag,
   number,
   numberPos,
+  program,
   string,
   stringPos,
   variadic,
