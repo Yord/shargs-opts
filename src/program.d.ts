@@ -1,3 +1,3 @@
 import {Fields, Opt} from '.'
 
-export const program: (opts?: Opt[]) => (key: string, fields?: Fields) => Opt
+export const program: (key: string, opts?: Opt[], fields?: Fields) => Opt
