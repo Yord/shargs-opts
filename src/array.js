@@ -3,8 +3,8 @@ const array = types => (key, args, fields = {}) => {
 
   return {
     key,
-    ...(typeof types !== 'undefined' ? {types} : {}),
     ...(typeof args  !== 'undefined' ? {args}  : {}),
+    ...(typeof types !== 'undefined' ? {types} : {}),
     ...rest
   }
 }
