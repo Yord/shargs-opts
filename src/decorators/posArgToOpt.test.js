@@ -21,3 +21,11 @@ test('posArgToOpt works if opt is undefined', () => {
 
   expect(opt).toStrictEqual(exp)
 })
+
+test('posArgToOpt works if args are undefined', () => {
+  const opt = posArgToOpt()({})
+
+  const exp = {args: []}
+
+  expect(opt).toStrictEqual(exp)
+})
