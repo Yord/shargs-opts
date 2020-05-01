@@ -7,6 +7,7 @@ const {complement}  = require('./decorators/complement')
 const {flag}        = require('./flag')
 const {number}      = require('./number')
 const {numberPos}   = require('./numberPos')
+const {posArgToOpt} = require('./decorators/posArgToOpt')
 const {program}     = require('./program')
 const {string}      = require('./string')
 const {stringPos}   = require('./stringPos')
@@ -23,6 +24,7 @@ module.exports = {
   flag,
   number,
   numberPos,
+  posArgToOpt,
   program,
   string,
   stringPos,
