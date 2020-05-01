@@ -29,3 +29,17 @@ test('posArgToOpt works if args are undefined', () => {
 
   expect(opt).toStrictEqual(exp)
 })
+
+test('posArgToOpt does not assign args if opt already has args', () => {
+  const opts = [stringPos('question')]
+
+  const args = ['deepThought', 'D']
+
+  const deepThought = command(opts)('deepThought', args)
+
+  const res = posArgToOpt(['foo'])(deepThought)
+  
+  const exp = deepThought
+
+  expect(res).toStrictEqual(exp)
+})
