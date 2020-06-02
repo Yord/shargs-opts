@@ -1,4 +1,4 @@
-const {command, posArgToOpt, program, stringPos} = require('..')
+const {subcommand, posArgToOpt, program, stringPos} = require('..')
 
 test('posArgToOpt README example works', () => {
   const opts = [stringPos('question')]
@@ -9,7 +9,7 @@ test('posArgToOpt README example works', () => {
 
   const res = posArgToOpt(args)(deepThought)
 
-  const exp = command(opts)('deepThought', args)
+  const exp = subcommand(opts)('deepThought', args)
 
   expect(res).toStrictEqual(exp)
 })
@@ -35,7 +35,7 @@ test('posArgToOpt does not assign args if opt already has args', () => {
 
   const args = ['deepThought', 'D']
 
-  const deepThought = command(opts)('deepThought', args)
+  const deepThought = subcommand(opts)('deepThought', args)
 
   const res = posArgToOpt(['foo'])(deepThought)
   
