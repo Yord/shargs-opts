@@ -1,11 +1,11 @@
-const {subcommand, posArgToOpt, program, stringPos} = require('..')
+const {subcommand, posArgToOpt, command, stringPos} = require('..')
 
 test('posArgToOpt README example works', () => {
   const opts = [stringPos('question')]
 
   const args = ['deepThought', 'D']
 
-  const deepThought = program('deepThought', opts)
+  const deepThought = command('deepThought', opts)
 
   const res = posArgToOpt(args)(deepThought)
 

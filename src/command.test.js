@@ -1,8 +1,8 @@
-const {program} = require('./program')
+const {command} = require('./command')
 
 test('program with undefined opts provides empty opts', () => {
-  const cmd = program('foo')
-  const exp = program('foo', [])
+  const cmd = command('foo')
+  const exp = command('foo', [])
 
   expect(cmd).toStrictEqual(exp)
 })
