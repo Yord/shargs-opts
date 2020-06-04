@@ -8,9 +8,9 @@ const {flag}        = require('./flag')
 const {number}      = require('./number')
 const {numberPos}   = require('./numberPos')
 const {posArgToOpt} = require('./decorators/posArgToOpt')
-const {program}     = require('./program')
 const {string}      = require('./string')
 const {stringPos}   = require('./stringPos')
+const {subcommand}  = require('./subcommand')
 const {variadic}    = require('./variadic')
 const {variadicPos} = require('./variadicPos')
 
@@ -19,15 +19,15 @@ module.exports = {
   arrayPos,
   bool,
   boolPos,
-  command,
   complement,
   flag,
   number,
   numberPos,
   posArgToOpt,
-  program,
+  command,
   string,
   stringPos,
+  subcommand,
   variadic,
   variadicPos
 }
