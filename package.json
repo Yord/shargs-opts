@@ -1,6 +1,6 @@
 {
   "name": "shargs-opts",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Type-based command-line options DSL for shargs",
   "keywords": [
     "shargs",
